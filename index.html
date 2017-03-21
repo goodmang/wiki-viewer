@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Wikipedia Viewer</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <!-- My css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title display-4">Wikipedia Viewer</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">A Free Code Camp Assignment</h6>
+                        <a id="getRandomArticle" class="btn btn-primary" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+                    </div>
+                    <div class="card-block">
+                        <form>
+                            <input id="search" type="search" placeholder="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title display-6">Search Results</h4>
+                        <div id="searchResults" class="card-columns">
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="card-title">Card title that wraps to a new line</h4>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                            <div class="card p-3">
+                                <blockquote class="card-block card-blockquote">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <footer>
+                                        <small class="text-muted">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </small>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card card-inverse card-primary p-3 text-center">
+                                <blockquote class="card-blockquote">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                                    <footer>
+                                        <small>
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </small>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                            <div class="card text-center">
+                                <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                            </div>
+                            <div class="card p-3 text-right">
+                                <blockquote class="card-blockquote">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                    <footer>
+                                        <small class="text-muted">Someone famous in <cite title="Source Title">Source Title</cite></small>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                            <div class="card">
+                                <div class="card-block">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- My scripts -->
+    <script src="js/wiki-viewer.js"></script>
+
+
+</body>
+
+</html>
