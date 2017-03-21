@@ -3,17 +3,17 @@
 function searchArticles() {
   var searchString = $("#search").val();
   $.ajax( {
-      url: 'https://en.wikipedia.org/w/api.php',
-      data: {
-        "action": "query",
-        "list": "search",
-        "format": "json",
-//        "prop": "info",
-        "srsearch": searchString
-      },
+      url: 'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=' + searchString + '&format=json',
+//       data: {
+//         "action": "query",
+//         "list": "search",
+//         "format": "json",
+//         "prop": "info",
+      //   "srsearch": searchString
+      // },
       dataType: 'json',
-      type: 'POST',
-      headers: { 'Api-User-Agent': 'wiki-viewer/1.0' },
+      // type: 'POST',
+      // headers: { 'Api-User-Agent': 'wiki-viewer/1.0' },
       success: function(data) {
          var html = '<div class="card-columns">';
 
