@@ -26,7 +26,7 @@ function searchArticles() {
             "gpssearch": searchString,
             "gpslimit": "10"
         },
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function(result) {
             var html = '';
             var snippetStr;
