@@ -24,6 +24,7 @@ function searchArticles() {
             "pilimit": "10",
             "wbptterms": "description",
             "gpssearch": searchString,
+            "origin": "*",
             "gpslimit": "10"
         },
         dataType: 'json',
@@ -49,7 +50,9 @@ function searchArticles() {
             elem.innerHTML = html;
         },
         error: function(textStatus, errorThrown) {
-            console.log('Error:' + textStatus + '/' + errorThrown);
+            console.log('Error:');
+            console.log(textStatus);
+            console.log(errorThrown);
         }
     });
 }
