@@ -79,11 +79,7 @@ function makeArticleCard(article) {
     return html;
 }
 
-function init() {
-    $("#search").on("search", searchArticles);
-}
-
 
 $(document).ready(function() {
-    init();
+  $("#search").on("search", searchArticles);
 });
