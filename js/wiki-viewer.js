@@ -16,17 +16,7 @@ function searchArticlesV2() {
     var searchString = $("#search").val();
     $.ajax({
         url: "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + searchString + "&limit=20&callback=?",
-        // data: {
-            // "action": "opensearch",
-            // "format": "json",
-            // "prop": "info",
-            // "list": "search",
-            // "meta": "",
-            // "formatversion": "2",
-            // "origin": "*",
-            // "srsearch": searchString
-        // },
-        dataType: 'json',
+        dataType: 'jsonp',
         method: "GET",
         success: function(result) {
 
@@ -109,10 +99,6 @@ function searchArticles() {
     });
 }
 
-function createLink(title) {
-    // Creates a link to the article based on the title
-    return "https://en.wikipedia.org/wiki/" + encodeURI(title);
-}
 
 function makeArticleCard(article) {
     var html = '<div class="card article">';
@@ -125,7 +111,7 @@ function makeArticleCard(article) {
     if (article.snippet) {
         html += '<p class="card-text">' + article.snippet + '</p>';
     }
-    html += '<a href="' + createLink(article.title) + '" class="card-link">Read Article</a>';
+    html += '<a href="' + article.link + '" class="card-link">Read Article</a>';
     html += '</div></div>'
     return html;
 }
