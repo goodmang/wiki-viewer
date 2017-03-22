@@ -5,29 +5,31 @@
 function searchArticles() {
     var searchString = $("#search").val();
     $.ajax({
-            url: 'https://en.wikipedia.org/w/api.php',
-            data: {
-            //   action: "query",
-            //   // formatversion: 2,
-            //   list: "search",
-            //   format: "json",
-            //   prop: "info",
-            //   srsearch: searchString
-            "action": "query",
-            "format": "json",
-            "prop": "pageimages|pageterms",
-            "generator": "prefixsearch",
-            "redirects": 1,
-            "formatversion": "2",
-            "piprop": "thumbnail",
-            "pithumbsize": "300",
-            "pilimit": "10",
-            "wbptterms": "description",
-            "gpssearch": searchString,
-            "origin": "*",
-            "gpslimit": "10"
-        },
+      url: 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&list=&meta=&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=300&pilimit=10&wbptterms=description&gpslimit=10&gpssearch=' + encodeURI(searchString + "&origin=*"),
+        //     url: 'https://en.wikipedia.org/w/api.php',
+        //     data: {
+        //     //   action: "query",
+        //     //   // formatversion: 2,
+        //     //   list: "search",
+        //     //   format: "json",
+        //     //   prop: "info",
+        //     //   srsearch: searchString
+        //     "action": "query",
+        //     "format": "json",
+        //     "prop": "pageimages|pageterms",
+        //     "generator": "prefixsearch",
+        //     "redirects": 1,
+        //     "formatversion": "2",
+        //     "piprop": "thumbnail",
+        //     "pithumbsize": "300",
+        //     "pilimit": "10",
+        //     "wbptterms": "description",
+        //     "gpssearch": searchString,
+        //     "origin": "*",
+        //     "gpslimit": "10"
+        // },
         dataType: 'json',
+        method: "GET",
         success: function(result) {
             var html = '';
             var snippetStr;
