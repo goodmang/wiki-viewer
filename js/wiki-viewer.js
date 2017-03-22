@@ -1,35 +1,42 @@
 'use strict';
 
+// $.ajax({
+//   url: "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + searchTerm + "&limit=20&callback=?",
+//   method: "GET",
+//   dataType: "jsonp",
+//   success: function(data) {
+//     $("#output").html(""); // clears out contents from earlier searches
+//     $("#output").append("<h5>Click to open in Wikipedia:</h5>")
+//     for (var i = 0; i < data[1].length; i++) {
+//       $("#output").append("<a href='" + data[3][i] + "' target='_blank'><div class='card horizontal hoverable'><div class='row'><div id='image" + i + "' class='card-image col s3 valign-wrapper'></div><div class='card-stacked col s9'><div class='card-content'><span class='card-title truncate'>" + data[1][i] + "</span><p>" + data[2][i] + "&nbsp;</p></div></div></div></div></a>");
+//     }
+
 
 function searchArticlesV2() {
     var searchString = $("#search").val();
     $.ajax({
-        url: 'https://en.wikipedia.org/w/api.php',
-        data: {
-            "action": "query",
-            "format": "json",
-            "prop": "info",
-            "list": "search",
-            "meta": "",
-            "formatversion": "2",
-            "origin": "*",
-            "srsearch": searchString
-        },
+        url: "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + searchString + "&limit=20&callback=?",
+        // data: {
+            // "action": "opensearch",
+            // "format": "json",
+            // "prop": "info",
+            // "list": "search",
+            // "meta": "",
+            // "formatversion": "2",
+            // "origin": "*",
+            // "srsearch": searchString
+        // },
         dataType: 'json',
         method: "GET",
         success: function(result) {
 
             var html = '';
-            var snippetStr;
 
-            for (var i = 0; i < result.query.search.length; i++) {
-                snippetStr = undefined;
-                if (result.query.search[i].hasOwnProperty("snippet")) {
-                    snippetStr = result.query.search[i].snippet
-                }
+            for (var i = 0; i < result[1].length; i++) {
                 html += makeArticleCard({
-                    title: result.query.search[i].title,
-                    snippet: snippetStr,
+                    title: result[1][i],
+                    snippet: result[2][i],
+                    link: result[3][i]
                 });
             }
 
